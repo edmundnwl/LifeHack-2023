@@ -41,3 +41,6 @@ Join Offun today and unlock a world of connections, collaboration, and endless o
 - SQLite
 
 Offun is a web app built on python flask. Its database of users, posts, and groups are stored in SQLite tables. The queries used to create the tables can be found in the folder under the file titled 'random.txt'.
+
+## Plot Twist
+As a form of plot twist, a random chance was given for a scam pop-up to appear on the user's screen when he is navigating between pages. The pop-up is obviously a scam due to its poor formatting and ridiculousness. A user that is aware of such scams will be able to identify it and safely close it by clicking the 'back' button. Else, if the user were to 'claim his prize' he will be immediately logged out and their account suspended as they are clearly not well versed in such scams and should promptly be blocked from using the app for the sake of cybersecurity of the user and the company.
