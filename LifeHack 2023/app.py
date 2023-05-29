@@ -20,7 +20,7 @@ db = SQL("sqlite:///offun.db")
 #Random pop up
 def random_scam():
     random_number = random.randint(1, 100)
-    if random_number <= 25:
+    if random_number <= 10:
         return True
     return False
 
