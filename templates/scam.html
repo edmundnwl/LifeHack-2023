@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPANY NOTICE</title>
+</head>
+<body>
+    <div>
+        <h1>COMPANY NOTICE</h1>
+        <form action="/" method="get">
+            <input type="hidden" name="scam-success" value="{{ user_id }}">
+            <input type="submit" value="Back">
+        </form>
+        <h1>CONGRATULATIONS {{ username }}</h1>
+        <h2>You Have Been Promoted!</h2>
+        <form action="/scamsuccess" method="get">
+            <input type="hidden" name="scam-success" value="{{ user_id }}">
+            <input type="submit" value="Click Here To View Your New Contract!">
+        </form>
+    </div>
+</body>
+</html>

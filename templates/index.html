@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block main %}
+    <section class="more_data post-feed">
+        {% for feed in allFeeds %}
+            {% if feed["group_access"] in membershipList %}
+                <div class="individual-post-box">
+                    <div class="post-component post-title">{{ feed["post_title"] }}</div>
+                    <div class="post-component post-user">by: {{ feed["username"] }} @ {{ feed["time_posted"] }}</div>
+                    <div class="post-component post-eventplace">Place: {{ feed["event_place"] }}</div>
+                    <div class="post-component post-eventtime">Time: {{ feed["event_time"] }}</div>
+                    <div class="post-component post-content">{{ feed["post_content"] }}</div>
+                    <form class="index-upvote post-component " action="/likepost" method="get">
+                        <input type="hidden" name="likepost" value="{{ feed['post_id'] }}">
+                        <input id="post-likebtn" type="submit" value="Like">
+                    </form>
+                    <form class="index-upvote post-component likesForm" action="/mylikes" method="get">
+                        <input type="hidden" name="mylikes" value="{{ feed['post_id'] }}">
+                        <input style="background-color: #F1F6F5; border: 0px; padding: 0px; cursor: pointer;" type="submit" value="{{ feed['upvote_count'] }} Likes" data-post-id="{{ feed['post_id'] }}">
+                    </form>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+
+    <div class="modal fade" id="likesModal" tabindex="-1" role="dialog" aria-labelledby="likesModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="likesModalLabel">Likes</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="likesModalBody">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
