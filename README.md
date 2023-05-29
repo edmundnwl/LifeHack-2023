@@ -25,9 +25,9 @@ Join Offun today and unlock a world of connections, collaboration, and endless o
 ## Testing
 1) Download the folder "LifeHack 2023"
 2) You may need to download packages used:
-  - pip3 install flask
-  - pip3 install flask_sessions
-  - pip3 install cs50
+    - pip3 install flask
+    - pip3 install flask_sessions
+    - pip3 install cs50
 3) In your terminal type: flask run
 4) The terminal should prompt you that the app is now running, you can view the app by clicking on the link provided.
 
